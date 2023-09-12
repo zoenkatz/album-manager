@@ -1,0 +1,12 @@
+.app-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #fffde1;
+
+  &:hover {
+    background-color: #d7d4a9;
+  }
+}

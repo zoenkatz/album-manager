@@ -1,0 +1,36 @@
+.album-photo-card {
+  width: 300px;
+  height: 100%;
+  min-height: 242px;
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+  background-color: #fffde1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  .album-photo-title {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .album-photo-thumbnail {
+    margin: 10px;
+  }
+
+  .card-photo-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+
+}
