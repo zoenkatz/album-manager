@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {DetailedHTMLProps, InputHTMLAttributes, useContext, useState} from "react";
 import {IPhoto} from "../../Assets/types";
 import "./Card.scss";
 import Button from "../Button/Button";
@@ -25,6 +25,12 @@ const Card = ({photo, onClick}: { photo?: IPhoto, onClick?: () => void }) => {
             }
         ).catch(e => console.log(e))
     }
+
+    const handleKeyDown = (e: DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            handleEdit()
+        }
+    }
     return <div className="album-photo-card">
         <div className="card-photo-buttons">
             <Button onClick={handleDelete} icon={binIcon}/>
@@ -32,7 +38,7 @@ const Card = ({photo, onClick}: { photo?: IPhoto, onClick?: () => void }) => {
         <div className="card-photo-details">
             {isEditMode ? <div className="album-photo-title">
                 <input value={photoTitle}
-                       onChange={(e) => setPhotoTitle(e.target.value)}/>
+                       onChange={(e) => setPhotoTitle(e.target.value)} onKeyDown={handleKeyDown}/>
                 <Button onClick={handleEdit} label="Submit"/>
             </div> : <div className="album-photo-title">
                 <div>{title}</div>
